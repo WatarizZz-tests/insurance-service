@@ -1,0 +1,17 @@
+.assureurs-slider {
+    width: 100%;
+    height: 300px;
+    background:linear-gradient(rgba(78, 78, 78, 0.2), rgba(52, 59, 107, 0.7)),url(../../assets/S0-les-assureurs-automobiles-repondent-a-l-ufc-que-choisir-182975.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.assureurs-slider h1 {
+    text-align: center;
+    color: white;
+}
