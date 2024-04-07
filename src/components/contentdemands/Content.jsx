@@ -13,7 +13,8 @@ import { FaSortAlphaDown, FaSortAlphaUp } from "react-icons/fa";
 
 const Content = () => {
   const BASE_URL = 'https://insurance-api-bic3.onrender.com';
-  const IN = "https://insurance-api-bic3.onrender.com/images/";
+  const IN = "https://firebasestorage.googleapis.com/v0/b/assurance-storage-6514b.appspot.com/o/images%2F";
+  const END = "?alt=media";
   const { user } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -231,10 +232,10 @@ const Content = () => {
                       <div className="flex-images">
                         {item.img.map((imgUrl, imgIndex) => (
                           <li key={imgIndex} className="li-demands-popup">
-                            <a href={IN + imgUrl} target="_blank" rel="noreferrer">
+                            <a href={IN + imgUrl + END} target="_blank" rel="noreferrer">
                               <img
                                 className="imgdemandes"
-                                src={IN + imgUrl}
+                                src={IN + imgUrl + END}
                                 alt={`Image ${imgIndex}`}
                               />
                             </a>
