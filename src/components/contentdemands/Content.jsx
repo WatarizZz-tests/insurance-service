@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { ImCross } from "react-icons/im";
@@ -95,6 +95,7 @@ const Content = () => {
       })
     );
   
+    // Generate and download the ZIP file
     zip.generateAsync({ type: "blob" }).then((content) => {
       const downloadLink = document.createElement("a");
       downloadLink.href = URL.createObjectURL(content);
@@ -103,10 +104,12 @@ const Content = () => {
     });
   };
 
-
   const downloadImagesForTd = (imageUrls) => {
-    const filteredImageUrls = imageUrls.map((imgUrl) => IN + imgUrl); 
-    downloadImagesAsZip(filteredImageUrls);
+    // Construct absolute URLs for images
+    const absoluteImageUrls = imageUrls.map((imgUrl) => IN + imgUrl + END);
+    console.log("Absolute Image URLs:", absoluteImageUrls); // Log absolute image URLs
+    // Call the function to download images as a ZIP file
+    downloadImagesAsZip(absoluteImageUrls);
   };
 
   const DeleteRequest = async (postIdToDelete) => {
@@ -287,3 +290,4 @@ const Content = () => {
 
 
 export default Content
+
