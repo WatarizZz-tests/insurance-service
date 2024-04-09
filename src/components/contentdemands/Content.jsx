@@ -141,6 +141,7 @@ const Content = () => {
       text: "Cette action est irréversible!",
       icon: "warning",
       showCancelButton: true,
+      heightAuto: false,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Oui, Supprimer!",
