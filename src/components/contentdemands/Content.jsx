@@ -113,7 +113,7 @@ const Content = () => {
   };
 
   const DeleteRequest = async (postIdToDelete) => {
-    const apiUrl = `posts/${postIdToDelete}`;
+    const apiUrl = `${BASE_URL}/api/posts/${postIdToDelete}`;
     try {
       const response = await axios.delete(apiUrl);
       console.log('Post deleted successfully:', response);
