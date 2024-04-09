@@ -125,7 +125,7 @@ const Content = () => {
 
   const UpdateRequest = async (postIdToUpdate) => {
     const updatedData = { request: "done" };
-    const apiUrl = `posts/${postIdToUpdate}`;
+    const apiUrl = `${BASE_URL}/api/posts/${postIdToUpdate}`;
     try {
       const response = await axios.put(apiUrl, updatedData);
       console.log('Post updated successfully:', response);
