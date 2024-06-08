@@ -27,7 +27,7 @@ const PopLoginAssureurs = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
     loginCall(
-      { email: email.current.value, password: password.current.value },
+      { email: email.current.value.toLowerCase(), password: password.current.value },
       dispatch
     );
   };
