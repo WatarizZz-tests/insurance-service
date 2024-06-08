@@ -43,10 +43,14 @@ const ContentPrime = () => {
         }
     };
 
-    const handleRegister = async (e) => {
+     const handleRegister = async (e) => {
         e.preventDefault();
+        const userToRegister = {
+            ...newUser,
+            email: newUser.email.toLowerCase()
+        };
         try {
-            const response = await axios.post(`${BASE_URL}/api/auth/registerassureur`, newUser, {
+            const response = await axios.post(`${BASE_URL}/api/auth/registerassureur`, userToRegister, {
                 headers: { userId: user._id }
             });
             setUsers([...users, response.data]);
