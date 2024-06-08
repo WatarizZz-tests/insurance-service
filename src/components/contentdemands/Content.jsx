@@ -9,8 +9,6 @@ import Swal from 'sweetalert2';
 import JSZip from "jszip";
 import { FaSortAlphaDown, FaSortAlphaUp } from "react-icons/fa";
 
-
-
 const Content = () => {
   const BASE_URL = 'https://insurance-api-bic3.onrender.com';
   const IN = "https://firebasestorage.googleapis.com/v0/b/assurance-storage-6514b.appspot.com/o/images%2F";
@@ -20,6 +18,7 @@ const Content = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState("asc"); // Initial sort order
 
+  const PRIME_ACCOUNT_ID = '66617c10e6f6dff6ff54c5d0'; // Replace with your environment variable if needed
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -53,22 +52,23 @@ const Content = () => {
     setPosts(sortedPosts);
   };
 
-
-    
-
   const GetPosts = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/api/posts`);
       if (response.status === 200) {
-        const result = response.data.filter((y) => y.assurance === user?.assureur);
-        setPosts(result);
+        if (user?._id === PRIME_ACCOUNT_ID) {
+          // If prime account, show all posts
+          setPosts(response.data);
+        } else {
+          // Otherwise, filter posts by user's assurance
+          const result = response.data.filter((y) => y.assurance === user?.assureur);
+          setPosts(result);
+        }
       }
     } catch (error) {
       console.error("Error fetching posts:", error);
     }
   };
-
-
 
   useEffect(() => {
     GetPosts();
@@ -289,6 +289,4 @@ const Content = () => {
   );
 };
 
-
-export default Content
-
+export default Content;

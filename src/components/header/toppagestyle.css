@@ -80,6 +80,11 @@
     flex-direction: row;
     align-items: center;
   }
+
+  .ctrl-panel-link {
+    color: white;
+    margin-right: 1rem;
+  }
   
 
   @media screen and (max-width:440px) {

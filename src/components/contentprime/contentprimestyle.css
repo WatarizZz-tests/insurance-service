@@ -1,0 +1,145 @@
+.content-prime {
+    max-width: 100%;
+  overflow-x: auto;
+    margin: 2rem 1.5rem 2.5rem 1.5rem;
+}
+.content-prime h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-register-user-panel  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-direction: column;
+}
+
+.form-register-user-panel input {
+    width: 100%;
+    border: none;
+    line-height: 2rem;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid grey;
+}
+
+.form-register-user-panel input:focus {
+    outline: none;
+}
+
+.form-register-user-panel button {
+    width: 100%;
+    color: white;
+    background-color: rgb(68, 63, 63);
+    line-height: 2.3rem;
+    border: none;
+    outline: none;
+    transition: ease-in-out 0.3s;
+}
+
+.form-register-user-panel button:hover {
+    background-color: rgba(68, 63, 63, 0.863);
+    color: white;
+    border: none;
+}
+
+.content-prime table {
+    
+    line-height: 2rem;
+    gap: 0.5rem;
+    width: 100%;
+  border-collapse: collapse;
+    
+}
+
+.content-prime th, .content-prime td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+
+.content-prime table button {
+    line-height: 1.5rem;
+    margin: 0 0.2rem;
+    
+}
+
+.content-prime table input {
+    line-height: 1.5rem;
+    border: none;
+    border-radius: 4px;
+    padding: 0 0.6rem;
+    border-bottom: 1px solid gray;
+    
+}
+
+.content-prime table input:focus {
+    outline: none;
+
+}
+.table-users-button-delete {
+    color: white;
+    background-color: rgb(229, 60, 60);
+    padding: 0.15rem 1.3rem;
+    border: none;
+    outline: rgb(251, 49, 49);
+    border-radius: 2px;
+    transition: ease-in-out 0.3s;
+}
+
+.table-users-button-delete:hover {
+    background-color:rgba(229, 60, 60, 0.823) ;
+
+}
+
+.table-users-button-changepw {
+    color: white;
+    background-color: rgb(60, 119, 229);
+    padding: 0.15rem 1.3rem;
+    border: none;
+    border-radius: 2px;
+    transition: ease-in-out 0.3s;
+}
+
+.table-users-button-changepw:hover {
+    background-color: rgba(60, 119, 229, 0.884);
+}
+
+.form-prime-changepw {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-prime-changepw input {
+    width: 50%;
+}
+
+
+.table-users-button-changepw-prime {
+    width: 50%;
+    color: white;
+    background-color: rgb(60, 119, 229);
+    padding: 0.15rem 1.3rem;
+    border: none;
+    border-radius: 2px;
+    transition: ease-in-out 0.3s;
+}
+
+.table-users-button-changepw-prime:hover {
+    background-color: rgba(60, 119, 229, 0.884);
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+  }

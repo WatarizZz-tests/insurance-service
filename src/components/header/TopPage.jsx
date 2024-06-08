@@ -8,12 +8,15 @@ import "./toppagestyle.css";
 import PopLoginAssureurs from "../login/PopLoginAssureurs";
 
 const TopPage = () => {
-    const { user } = useContext(AuthContext);
-    const [loginPopup, setLoginPopup] = useState(false);
-    const ClearStorage = () => {
-      localStorage.clear();
-      window.location.reload();
-    };
+  const { user } = useContext(AuthContext);
+  const [loginPopup, setLoginPopup] = useState(false);
+  const PRIME_ACCOUNT_ID = '66617c10e6f6dff6ff54c5d0';
+
+  const ClearStorage = () => {
+    localStorage.clear();
+    window.location.reload();
+  };
+
   return (
     <header className="header">
       {/* ============ header top ============ */}
@@ -27,8 +30,13 @@ const TopPage = () => {
           </div>
           {user ? (
             <div className="user-on-con">
-              {" "}
-              -{user.username}{" "}
+              {user._id === PRIME_ACCOUNT_ID ? (
+                <>
+                  <Link className="ctrl-panel-link" to="/controlpanel">Gerer les comptes</Link> - {user.username}
+                </>
+              ) : (
+                <>-{user.username}</>
+              )}
               <button onClick={() => ClearStorage()} className="logoff-btn">
                 <IoIosLogOut />
               </button>
@@ -44,14 +52,13 @@ const TopPage = () => {
                 </i>{" "}
                 Se Connecter
               </Link>
-              <PopLoginAssureurs trigger={loginPopup} setTrigger={setLoginPopup}/>
-
+              <PopLoginAssureurs trigger={loginPopup} setTrigger={setLoginPopup} />
             </div>
           )}
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default TopPage
+export default TopPage;
