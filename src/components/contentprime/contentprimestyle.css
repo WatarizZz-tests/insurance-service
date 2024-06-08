@@ -119,6 +119,12 @@
 
 .form-prime-changepw input {
     width: 50%;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.form-prime-changepw input:focus {
+outline: none;
 }
 
 
