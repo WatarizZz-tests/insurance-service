@@ -225,9 +225,13 @@ const Content = () => {
                     <td>{item.assurance}</td>
                     <td>{item.effexp[0]} - {item.effexp[1]}</td>
                     <td>
-                      {item.garanties.filter((garant) => garant !== "").map((garant, ind) => (
-                        <li key={ind}>{garant}</li>
-                      ))}
+                      {Array.isArray(item.garanties) ? (
+                      item.garanties.filter((garant) => garant !== "").map((garant, ind) => (
+                         <li key={ind}>{garant}</li>
+                        ))
+                     ) : (
+                         <li>{item.garanties}</li> // Render a single item if it's not an array
+                       )}
                     </td>
                     <td>{item.datelieu[0]} à {item.datelieu[1]}</td>
                     <td>{item.nature}</td>
