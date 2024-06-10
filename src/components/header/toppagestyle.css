@@ -84,6 +84,11 @@
   .ctrl-panel-link {
     color: white;
     margin-right: 1rem;
+    
+  }
+
+  .ctrl-panel-link:hover {
+    color: white;
   }
   
 

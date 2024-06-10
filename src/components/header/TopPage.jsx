@@ -32,6 +32,7 @@ const TopPage = () => {
             <div className="user-on-con">
               {user._id === PRIME_ACCOUNT_ID ? (
                 <>
+                  <Link className="ctrl-panel-link" to="/">Acceuil</Link>
                   <Link className="ctrl-panel-link" to="/controlpanel">Gerer les comptes</Link> - {user.username}
                 </>
               ) : (
