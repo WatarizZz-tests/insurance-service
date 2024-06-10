@@ -8,7 +8,7 @@ import ChangePrimePasswordModal from '../modal/ChangePrimePasswordModal';
 
 
 const ContentPrime = () => {
-    const BASE_URL = 'https://insurance-api-bic3.onrender.com';
+    const BASE_URL = process.env.REACT_APP_BASE_URL;
     const [users, setUsers] = useState([]);
     const [newUser, setNewUser] = useState({ username: '', email: '', password: '', assureur: '' });
     const [primePassword, setPrimePassword] = useState('');

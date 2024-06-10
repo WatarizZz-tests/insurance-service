@@ -10,7 +10,7 @@ import PopLoginAssureurs from "../login/PopLoginAssureurs";
 const TopPage = () => {
   const { user } = useContext(AuthContext);
   const [loginPopup, setLoginPopup] = useState(false);
-  const PRIME_ACCOUNT_ID = '66646b06e6db92659aa0ac2b';
+  const PRIME_ACCOUNT_ID = process.env.REACT_APP_PRIME_ACCOUNT;
 
   const ClearStorage = () => {
     localStorage.clear();

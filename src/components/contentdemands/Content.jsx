@@ -10,7 +10,7 @@ import JSZip from "jszip";
 import { FaSortAlphaDown, FaSortAlphaUp } from "react-icons/fa";
 
 const Content = () => {
-  const BASE_URL = 'https://insurance-api-bic3.onrender.com';
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   const IN = "https://firebasestorage.googleapis.com/v0/b/assurance-storage-6514b.appspot.com/o/images%2F";
   const END = "?alt=media";
   const { user } = useContext(AuthContext);
@@ -18,7 +18,7 @@ const Content = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState("asc"); // Initial sort order
 
-  const PRIME_ACCOUNT_ID = '66646b06e6db92659aa0ac2b'; // Replace with your environment variable if needed
+  const PRIME_ACCOUNT_ID = process.env.REACT_APP_PRIME_ACCOUNT; // Replace with your environment variable if needed
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
